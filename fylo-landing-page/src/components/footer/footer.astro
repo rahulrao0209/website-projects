@@ -1,0 +1,45 @@
+---
+import logo from "/images/logo.svg";
+import iconEmail from "/images/icon-email.svg";
+import iconLocation from "/images/icon-location.svg";
+import iconPhone from "/images/icon-phone.svg";
+import "./footer.scss";
+---
+
+<footer>
+  <div class="footer__logo logo"><img src={logo} alt="" /></div>
+  <div class="footer__address">
+    <address>
+      <span><img src={iconLocation} alt="" /></span> California, Main street, Escobar
+      lane Miami vice 40001
+    </address>
+  </div>
+  <div class="footer__links-group-1">
+    <ul class="links-group links-group-1">
+      <li><span><img src={iconPhone} alt="" /></span>+1-543-123-4567</li>
+      <li><span><img src={iconEmail} alt="" /></span>findus@fylo.com</li>
+    </ul>
+  </div>
+  <div class="footer__links-group-2">
+    <ul class="links-group links-group-2">
+      <li>About Us</li>
+      <li>Jobs</li>
+      <li>Press</li>
+      <li>Blog</li>
+    </ul>
+  </div>
+  <div class="footer__links-group-3">
+    <ul class="links-group links-group-3">
+      <li>Contact Us</li>
+      <li>Terms</li>
+      <li>Privacy</li>
+    </ul>
+  </div>
+  <div class="footer__links-group-4">
+    <ul class="links-group links-group-4">
+      <li>Facebook</li>
+      <li>Twitter</li>
+      <li>Instagram</li>
+    </ul>
+  </div>
+</footer>

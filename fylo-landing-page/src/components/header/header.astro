@@ -1,0 +1,29 @@
+---
+import illustrationIntro from "/images/illustration-intro.png";
+import bgCurvyMobile from "/images/bg-curvy-mobile.svg";
+import bgCurvyDesktop from "/images/bg-curvy-desktop.svg";
+import "./header.scss";
+---
+
+<header>
+  <div class="intro-image">
+    <img src={illustrationIntro} alt="" />
+  </div>
+  <div class="bg-image">
+    <img
+      sizes="100vw"
+      srcset={`${bgCurvyMobile} 400w, ${bgCurvyDesktop} 900w`}
+      src={bgCurvyMobile}
+      alt=""
+    />
+  </div>
+  <div class="content">
+    <h3>All your files in one secure location, accessible anywhere</h3>
+    <p>
+      Fylo stores all your most important files in one secure location. Access
+      them wherever you need, share and collaborate with friends family and
+      co-workers.
+    </p>
+  </div>
+  <button>Get Started</button>
+</header>

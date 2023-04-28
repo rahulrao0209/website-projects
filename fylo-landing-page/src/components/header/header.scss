@@ -1,0 +1,97 @@
+header {
+  position: relative;
+  margin-top: 8rem;
+}
+
+div.intro-image {
+  margin: 0 auto;
+  padding: 0 3rem;
+  max-width: 60rem;
+
+  img {
+    width: 100%;
+  }
+}
+
+div.bg-image {
+  position: absolute;
+  width: 100%;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  img {
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    bottom: -155px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-dark-blue-2);
+    height: 20rem;
+    z-index: -1;
+
+    @media only screen and (min-width: 768px) {
+      bottom: -170px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      bottom: -220px;
+    }
+  }
+}
+
+div.content {
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: center;
+  color: var(--white);
+
+  & > h3 {
+    font-size: 3.25rem;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  & > p {
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+
+  @media only screen and (min-width: 768px) {
+    max-width: 40%;
+  }
+}
+
+button {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 1.4rem 1.5rem;
+  border-radius: 100vw;
+  width: 20rem;
+  outline: none;
+  border: none;
+  background-color: var(--accent-blue);
+  color: var(--white);
+  font-weight: 400;
+  font-size: 1.75rem;
+  transition: all 0.2s ease;
+  z-index: 2;
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--accent-blue);
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+
+  &:active {
+    cursor: pointer;
+    transform: scale(1);
+  }
+}

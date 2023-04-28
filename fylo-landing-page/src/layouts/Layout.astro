@@ -1,0 +1,107 @@
+---
+import "./Layout.scss";
+import "../styles/utils/logo.scss";
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+  :root {
+    /* Primary colors */
+    --primary-dark-blue-1: hsl(217, 28%, 15%);
+    --primary-dark-blue-2: hsl(218, 28%, 13%);
+    --primary-dark-blue-3: hsl(216, 53%, 9%);
+    --primary-dark-blue-4: hsl(219, 30%, 18%);
+
+    /* Accent colors */
+    --accent-cyan: hsl(176, 68%, 64%);
+    --accent-blue: hsl(198, 60%, 50%);
+    --accent-light-red: hsl(0, 100%, 63%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+  }
+
+  html {
+    font-family: "Raleway", sans-serif;
+    font-size: 50%;
+
+    /* Tablet Portrait */
+    @media only screen and (min-width: 478px) {
+      font-size: 50%;
+    }
+
+    /* Tablet Landscape */
+    @media only screen and (min-width: 768px) {
+      font-size: 56.25%;
+    }
+
+    /* Desktop */
+    @media only screen and (min-width: 992px) {
+      font-size: 62.5%;
+    }
+
+    /* Big Desktop */
+    @media only screen and (min-width: 1440px) {
+      font-size: 75%;
+    }
+  }
+
+  body {
+    box-sizing: border-box;
+    min-width: 290px;
+    background-color: var(--primary-dark-blue-1);
+    overflow-x: hidden;
+
+    /* Scrollbar */
+    &::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--primary-dark-blue-3);
+      border-radius: 100vw;
+      margin: 1.4em 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--white);
+      border: 0.5em solid var(--white);
+      border-radius: 100vw;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--white);
+    }
+  }
+</style>

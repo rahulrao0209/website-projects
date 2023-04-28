@@ -1,0 +1,50 @@
+---
+import Profile1 from "/images/profile-1.jpg";
+import Profile2 from "/images/profile-2.jpg";
+import Profile3 from "/images/profile-3.jpg";
+import quote from "/images/bg-quotes.png";
+import "./reviews.scss";
+---
+
+<section class="reviews">
+  <div class="quote"><img src={quote} alt="" /></div>
+  <ul>
+    <li>
+      <blockquote>
+        Fylo has improved our team productivity by an order of magnitude. Since
+        making the switch our team has become a well-oiled collaboration
+        machine.
+      </blockquote>
+      <div class="reviewer">
+        <div><img src={Profile1} alt="" /></div>
+        <p>
+          <bold>Satish Patel</bold><br /><span>Founder & CEO, Huddle.</span>
+        </p>
+      </div>
+    </li>
+    <li>
+      <blockquote>
+        Fylo has improved our team productivity by an order of magnitude. Since
+        making the switch our team has become a well-oiled collaboration
+        machine.
+      </blockquote>
+      <div class="reviewer">
+        <div><img src={Profile2} alt="" /></div>
+        <p>
+          <bold>Bruce McKenzie</bold><br /><span>Founder & CTO, Huddle.</span>
+        </p>
+      </div>
+    </li>
+    <li>
+      <blockquote>
+        Fylo has improved our team productivity by an order of magnitude. Since
+        making the switch our team has become a well-oiled collaboration
+        machine.
+      </blockquote>
+      <div class="reviewer">
+        <div><img src={Profile3} alt="" /></div>
+        <p><bold>Eva Boyd</bold><br /><span>Founder & CFO, Huddle.</span></p>
+      </div>
+    </li>
+  </ul>
+</section>

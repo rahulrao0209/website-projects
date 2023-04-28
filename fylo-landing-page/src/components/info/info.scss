@@ -1,0 +1,49 @@
+section.info {
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  .info-image {
+    width: 50%;
+    max-width: 60rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .info-content {
+    width: 50%;
+    text-align: left;
+
+    h3 {
+      font-size: 4rem;
+    }
+
+    p {
+      margin: 2rem 0;
+      padding: 0;
+      font-size: 1.5rem;
+    }
+
+    div {
+      width: 100%;
+      text-decoration: underline;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+
+      & > a {
+        color: var(--accent-cyan);
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
