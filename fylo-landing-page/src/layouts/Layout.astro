@@ -1,6 +1,5 @@
 ---
-import "./Layout.scss";
-import "../styles/utils/logo.scss";
+import "../styles/index.scss";
 export interface Props {
   title: string;
 }
@@ -28,34 +27,7 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-  }
-
-  :root {
-    /* Primary colors */
-    --primary-dark-blue-1: hsl(217, 28%, 15%);
-    --primary-dark-blue-2: hsl(218, 28%, 13%);
-    --primary-dark-blue-3: hsl(216, 53%, 9%);
-    --primary-dark-blue-4: hsl(219, 30%, 18%);
-
-    /* Accent colors */
-    --accent-cyan: hsl(176, 68%, 64%);
-    --accent-blue: hsl(198, 60%, 50%);
-    --accent-light-red: hsl(0, 100%, 63%);
-
-    /* Neutral */
-    --white: hsl(0, 0%, 100%);
-  }
-
   html {
-    font-family: "Raleway", sans-serif;
-    font-size: 50%;
-
     /* Tablet Portrait */
     @media only screen and (min-width: 478px) {
       font-size: 50%;
@@ -82,26 +54,5 @@ const { title } = Astro.props;
     min-width: 290px;
     background-color: var(--primary-dark-blue-1);
     overflow-x: hidden;
-
-    /* Scrollbar */
-    &::-webkit-scrollbar {
-      width: 0.8rem;
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: var(--primary-dark-blue-3);
-      border-radius: 100vw;
-      margin: 1.4em 0;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--white);
-      border: 0.5em solid var(--white);
-      border-radius: 100vw;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: var(--white);
-    }
   }
 </style>

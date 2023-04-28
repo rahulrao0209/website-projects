@@ -1,0 +1,51 @@
+/* 
+  margin, padding and border styles are reset globally.
+  box-sizing is set to border-box by default.
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+/* Headings are unstyled */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Lists are unstyled */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Images are block level */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+/* Images are constrained to parent width */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}

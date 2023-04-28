@@ -17,11 +17,16 @@ section {
   h2 {
     margin: 1.25rem 0;
     font-size: 2.4rem;
+    font-weight: 700;
   }
 
   p {
     font-size: 1.6rem;
     margin: 0 auto;
     padding: 0 6rem;
+  }
+
+  img {
+    display: inline-block;
   }
 }
