@@ -43,6 +43,10 @@ section.info {
       & > a {
         color: var(--accent-cyan);
         font-size: 1.8rem;
+
+        &::before {
+          display: none;
+        }
       }
     }
   }

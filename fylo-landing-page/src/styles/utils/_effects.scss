@@ -1,0 +1,24 @@
+/* Link hover underline effect */
+a {
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 0;
+    height: 0.5px;
+    background-color: var(--white);
+    transition: width 0.2s ease-out;
+  }
+}
