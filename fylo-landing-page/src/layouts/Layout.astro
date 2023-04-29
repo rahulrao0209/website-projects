@@ -15,10 +15,10 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Raleway:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon-32x32.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -28,6 +28,8 @@ const { title } = Astro.props;
 </html>
 <style is:global>
   html {
+    font-size: 50%;
+
     /* Tablet Portrait */
     @media only screen and (min-width: 478px) {
       font-size: 50%;

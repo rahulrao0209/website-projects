@@ -1,0 +1,52 @@
+/*
+  Media query utility mixins designed to follow a mobile-first approach.
+*/
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "xl2": 1536px,
+);
+
+/* Small */
+@mixin sm {
+  @media (min-width: map.get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+/* Medium */
+@mixin md {
+  @media (min-width: map.get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+/* Large */
+@mixin lg {
+  @media (min-width: map.get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+/* Extra Large */
+@mixin xl {
+  @media (min-width: map.get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+/* Extra Large 2 */
+@mixin xl2 {
+  @media (min-width: map.get($breakpoints, "xl2")) {
+    @content;
+  }
+}
+
+/* Flexible breakpoint */
+@mixin breakpoint($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}

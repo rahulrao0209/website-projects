@@ -1,5 +1,5 @@
 section.info {
-  padding: 6rem 0;
+  padding: 6rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,8 +11,9 @@ section.info {
   }
 
   .info-image {
-    width: 50%;
+    width: 40%;
     max-width: 60rem;
+    min-width: 38rem;
 
     img {
       width: 100%;
@@ -20,11 +21,16 @@ section.info {
   }
 
   .info-content {
-    width: 50%;
+    width: 80%;
     text-align: left;
 
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
     h3 {
-      font-size: 4rem;
+      font-size: 3rem;
+      font-weight: 500;
     }
 
     p {
@@ -46,6 +52,10 @@ section.info {
 
         &::before {
           display: none;
+        }
+
+        &:hover {
+          color: darken(hsl(176, 68%, 64%), 20%);
         }
       }
     }

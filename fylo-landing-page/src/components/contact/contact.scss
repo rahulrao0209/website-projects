@@ -39,7 +39,7 @@ section.contact {
   }
 
   p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   label {
@@ -48,11 +48,15 @@ section.contact {
   }
 
   input {
-    padding: 2rem;
+    padding: 1.6rem;
     border-radius: 100vw;
     outline: none;
     border: none;
     width: 100%;
+
+    &::placeholder {
+      font-size: 1.6rem;
+    }
 
     @media only screen and (min-width: 992px) {
       width: 70%;
@@ -60,7 +64,7 @@ section.contact {
   }
 
   button.button--get-started {
-    padding: 2rem;
+    padding: 1.6rem;
     width: 100%;
 
     @media only screen and (min-width: 992px) {
