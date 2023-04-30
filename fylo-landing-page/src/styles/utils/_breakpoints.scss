@@ -1,12 +1,12 @@
+@use "sass:map";
 /*
   Media query utility mixins designed to follow a mobile-first approach.
 */
 $breakpoints: (
-  "sm": 640px,
+  "sm": 478px,
   "md": 768px,
-  "lg": 1024px,
-  "xl": 1280px,
-  "xl2": 1536px,
+  "lg": 992px,
+  "xl": 1440px,
 );
 
 /* Small */
@@ -33,13 +33,6 @@ $breakpoints: (
 /* Extra Large */
 @mixin xl {
   @media (min-width: map.get($breakpoints, "xl")) {
-    @content;
-  }
-}
-
-/* Extra Large 2 */
-@mixin xl2 {
-  @media (min-width: map.get($breakpoints, "xl2")) {
     @content;
   }
 }

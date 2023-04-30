@@ -1,3 +1,5 @@
+@import "../../styles/index.scss";
+
 header {
   position: relative;
   margin-top: 4rem;
@@ -35,11 +37,11 @@ div.bg-image {
     height: 20rem;
     z-index: -1;
 
-    @media only screen and (min-width: 768px) {
+    @include md {
       bottom: -170px;
     }
 
-    @media only screen and (min-width: 1440px) {
+    @include xl {
       bottom: -220px;
     }
   }
@@ -62,7 +64,7 @@ div.content {
     line-height: 1.5;
   }
 
-  @media only screen and (min-width: 768px) {
+  @include md {
     max-width: 40%;
   }
 }

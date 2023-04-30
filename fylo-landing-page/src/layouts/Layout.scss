@@ -1,0 +1,32 @@
+@import "../styles/index.scss";
+
+html {
+  font-size: 50%;
+
+  /* Tablet Portrait (478px)*/
+  @include sm {
+    font-size: 50%;
+  }
+
+  /* Tablet Landscape (768px)*/
+  @include md {
+    font-size: 56.25%;
+  }
+
+  /* Desktop (992px)*/
+  @include lg {
+    font-size: 62.5%;
+  }
+
+  /* Big Desktop (1440px)*/
+  @include xl {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  min-width: 290px;
+  background-color: var(--primary-dark-blue-1);
+  overflow-x: hidden;
+}

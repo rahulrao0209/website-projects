@@ -1,3 +1,5 @@
+@import "../../styles//index.scss";
+
 section.info {
   padding: 6rem 3rem;
   display: flex;
@@ -6,7 +8,7 @@ section.info {
   align-items: center;
   gap: 5rem;
 
-  @media only screen and (min-width: 768px) {
+  @include md {
     flex-direction: row;
   }
 
@@ -24,7 +26,7 @@ section.info {
     width: 80%;
     text-align: left;
 
-    @media (min-width: 768px) {
+    @include md {
       width: 50%;
     }
 

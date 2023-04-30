@@ -1,3 +1,5 @@
+@import "../../styles/index.scss";
+
 footer {
   padding-block: 20rem 10rem !important;
   display: grid;
@@ -6,7 +8,7 @@ footer {
   grid-row-gap: 2.5rem;
   background-color: hsl(216, 53%, 9%);
 
-  @media only screen and (min-width: 992px) {
+  @include lg {
     grid-template-columns: repeat(6, minmax(auto, 1fr));
     grid-column-gap: 3rem;
     align-content: start;
