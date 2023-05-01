@@ -35,3 +35,28 @@ a {
     }
   }
 }
+
+/* Button hover scaling effect */
+button {
+  @media (pointer: fine) {
+    &:hover {
+      background-color: var(--white);
+      color: var(--accent-blue);
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      cursor: pointer;
+      transform: scale(1);
+    }
+  }
+
+  @media (pointer: coarse) {
+    &:active {
+      background-color: var(--white);
+      color: var(--accent-blue);
+      transform: scale(0.9);
+    }
+  }
+}

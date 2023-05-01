@@ -59,7 +59,7 @@ div.content {
   }
 
   @include md {
-    max-width: 40%;
+    max-width: 60%;
   }
 }
 
@@ -76,16 +76,4 @@ button {
   font-size: 1.75rem;
   transition: all 0.2s ease;
   z-index: 2;
-
-  &:hover {
-    background-color: var(--white);
-    color: var(--accent-blue);
-    cursor: pointer;
-    transform: scale(1.15);
-  }
-
-  &:active {
-    cursor: pointer;
-    transform: scale(1);
-  }
 }
