@@ -1,7 +1,6 @@
 @import "../../styles//index.scss";
 
 section.info {
-  padding: 6rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,7 +35,6 @@ section.info {
     }
 
     p {
-      margin: 2rem 0;
       padding: 0;
       font-size: 1.5rem;
     }

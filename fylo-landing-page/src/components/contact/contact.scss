@@ -4,9 +4,6 @@ section.contact {
   display: flex;
   flex-flow: column nowrap;
   gap: 2rem;
-
-  margin: 0 auto;
-  padding: 4rem 2rem;
   background-color: hsl(217, 28%, 15%);
   box-shadow: var(--primary-dark-blue-3) 0px 20px 40px;
   border-radius: 10px;
@@ -50,7 +47,6 @@ section.contact {
   }
 
   input {
-    padding: 1.6rem;
     border-radius: 100vw;
     outline: none;
     border: none;
@@ -66,7 +62,6 @@ section.contact {
   }
 
   button.button--get-started {
-    padding: 1.6rem;
     width: 100%;
 
     @include lg {
