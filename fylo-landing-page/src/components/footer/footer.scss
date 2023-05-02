@@ -1,12 +1,13 @@
 @import "../../styles/index.scss";
 
 footer {
-  padding-block: 20rem 10rem !important;
+  padding: 20rem 6rem !important;
   display: grid;
   grid-row-gap: 2.5rem;
   background-color: hsl(216, 53%, 9%);
 
   @include lg {
+    padding-inline: 10rem !important;
     grid-template-columns: repeat(6, minmax(auto, 1fr));
     grid-column-gap: 3rem;
     align-content: start;
@@ -54,6 +55,10 @@ footer {
   address {
     display: flex;
     gap: 3rem;
+
+    img {
+      min-width: 1.5rem;
+    }
   }
 
   .links-group-1 li {
@@ -68,7 +73,7 @@ footer {
     align-items: baseline;
 
     svg {
-      fill: #fff;
+      fill: var(--white);
     }
   }
 }
