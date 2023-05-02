@@ -65,5 +65,10 @@ footer {
     display: flex;
     gap: 3rem;
     justify-content: center;
+    align-items: baseline;
+
+    svg {
+      fill: #fff;
+    }
   }
 }
