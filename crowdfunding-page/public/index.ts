@@ -1,0 +1,10 @@
+export { default as BookmarkIcon } from "./images/icon-bookmark.svg";
+export { default as CheckIcon } from "./images/icon-check.svg";
+export { default as CloseMenuIcon } from "./images/icon-close-menu.svg";
+export { default as CloseModalcon } from "./images/icon-close-modal.svg";
+export { default as Favicon32 } from "./images/favicon-32x32.png";
+export { default as HamburgerIcon } from "./images/icon-hamburger.svg";
+export { default as HeroDesktop } from "./images/image-hero-desktop.jpg";
+export { default as HeroMobile } from "./images/image-hero-mobile.jpg";
+export { default as Logo } from "./images/logo.svg";
+export { default as LogoMasterCraft } from "./images/logo-mastercraft.svg";

@@ -1,10 +1,17 @@
-<nav>
-  <div class="logo | text-6xl font-sans font-bold text-white mt-16 mx-16">
-    Crowdfund
-  </div>
-  <ul>
+---
+import { HamburgerIcon } from "../../../public/index";
+---
+
+<nav class="flex items-center justify-between px-16 py-20">
+  <div class="logo | text-6xl font-sans font-bold text-white">crowdfund</div>
+  <button
+    class="w-12 h-12 hover:scale-105 active:scale-100 duration-150 ease-linear"
+  >
+    <img src={HamburgerIcon} alt="menu" class="w-full" />
+  </button>
+  <!-- <ul>
     <li></li>
     <li></li>
     <li></li>
-  </ul>
+  </ul> -->
 </nav>
