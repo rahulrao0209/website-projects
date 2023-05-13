@@ -16,6 +16,8 @@ module.exports = {
       black: "hsl(0, 0%, 0%)",
       white: "hsl(100, 100%, 100%)",
       darkGray: "hsl(0, 0%, 48%)",
+      "slate-50": "#f8fafc",
+      "gray-300": "#d1d5db",
     },
     fontFamily: {
       sans: ["Commissioner", "sans-serif"],
