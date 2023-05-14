@@ -27,6 +27,9 @@ module.exports = {
         "hero-desktop": "url('images/image-hero-desktop.jpg')",
         "hero-mobile": "url('/images/image-hero-mobile.jpg')",
       },
+      maxWidth: {
+        "max-w-8xl": "50rem",
+      },
     },
   },
   plugins: [],
