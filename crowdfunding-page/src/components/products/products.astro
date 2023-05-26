@@ -1,58 +1,28 @@
+---
+import PRODUCTS from "../../data/products.json";
+import type { Product } from "../../types/index";
+const products: Product[] = JSON.parse(JSON.stringify(PRODUCTS));
+---
+
 <div class="cards | my-24 px-12">
-  <div
-    class="text-start outline outline-offset-2 outline-1 outline-gray-300 rounded-3xl px-12 py-16"
-  >
-    <h1 class="text-5xl font-bold">Bamboo Stand</h1>
-    <h2 class="text-cyan-moderate text-4xl mt-4 mb-12">Pledge $25 or more</h2>
-    <p class="text-4xl my-9 text-darkGray mx-auto leading-relaxed">
-      You get an ergonomic stand made of natural bamboo. You've helped us launch
-      our promotional campaign, and you'll be added to a special Backer member
-      list.
-    </p>
-    <div class="my-16 flex items-baseline">
-      <span class="text-8xl font-bold mr-6">101</span>
-      <span class="text-5xl text-darkGray">left</span>
-    </div>
-    <button
-      class="bg-cyan-moderate drop-shadow-md text-white text-3xl my-3 font-bold py-8 px-6 rounded-full w-full max-w-sm min-w-max hover:bg-cyan-dark hover:drop-shadow-xl hover:scale-105 active:bg-cyan-dark active:drop-shadow-none active:scale-100 duration-150 ease-linear"
-      >Select Reward</button
-    >
-  </div>
-  <div
-    class="text-start outline outline-offset-2 outline-1 outline-gray-300 rounded-3xl px-12 py-16 my-20"
-  >
-    <h1 class="text-5xl font-bold">Black Edition Stand</h1>
-    <h2 class="text-cyan-moderate text-4xl mt-4 mb-12">Pledge $75 or more</h2>
-    <p class="text-4xl my-9 text-darkGray mx-auto leading-relaxed">
-      You get a Black Special edition computer stand and a personal thank you.
-      You'll be added to our Backer member list. Shipping is included.
-    </p>
-    <div class="my-16 flex items-baseline">
-      <span class="text-8xl font-bold mr-6">64</span>
-      <span class="text-5xl text-darkGray">left</span>
-    </div>
-    <button
-      class="bg-cyan-moderate drop-shadow-md text-white text-3xl my-3 font-bold py-8 px-6 rounded-full w-full max-w-sm min-w-max hover:bg-cyan-dark hover:drop-shadow-xl hover:scale-105 active:bg-cyan-dark active:drop-shadow-none active:scale-100 duration-150 ease-linear"
-      >Select Reward</button
-    >
-  </div>
-  <div
-    class="text-start outline outline-offset-2 outline-1 outline-gray-300 rounded-3xl px-12 py-16"
-  >
-    <h1 class="text-5xl font-bold">Mahogany Special Edition</h1>
-    <h2 class="text-cyan-moderate text-4xl mt-4 mb-12">Pledge $200 or more</h2>
-    <p class="text-4xl my-9 text-darkGray mx-auto leading-relaxed">
-      You get two Special Edition Mahogany stands, a Backer T-Shirt and a
-      personal thank you. You'll be added to our Backer member list. Shipping is
-      included.
-    </p>
-    <div class="my-16 flex items-baseline">
-      <span class="text-8xl font-bold mr-6">1</span>
-      <span class="text-5xl text-darkGray">left</span>
-    </div>
-    <button
-      class="bg-cyan-moderate drop-shadow-md text-white text-3xl my-3 font-bold py-8 px-6 rounded-full w-full max-w-sm min-w-max hover:bg-cyan-dark hover:drop-shadow-xl hover:scale-105 active:bg-cyan-dark active:drop-shadow-none active:scale-100 duration-150 ease-linear"
-      >Select Reward</button
-    >
-  </div>
+  {
+    products.map((product: Product) => (
+      <div class="text-start outline outline-offset-2 outline-1 outline-gray-300 rounded-3xl px-12 py-16 my-16">
+        <h1 class="text-5xl font-bold">{product.title}</h1>
+        <h2 class="text-cyan-moderate text-4xl mt-4 mb-12">
+          Pledge ${product.price} or more
+        </h2>
+        <p class="text-4xl my-9 text-darkGray mx-auto leading-relaxed">
+          {product.content}
+        </p>
+        <div class="my-16 flex items-baseline">
+          <span class="text-8xl font-bold mr-6">{product.quantity}</span>
+          <span class="text-5xl text-darkGray">left</span>
+        </div>
+        <button class="bg-cyan-moderate drop-shadow-md text-white text-3xl my-3 font-bold py-8 px-6 rounded-full w-full max-w-sm min-w-max hover:bg-cyan-dark hover:drop-shadow-xl hover:scale-105 active:bg-cyan-dark active:drop-shadow-none active:scale-100 duration-150 ease-linear">
+          Select Reward
+        </button>
+      </div>
+    ))
+  }
 </div>
