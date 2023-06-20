@@ -4,18 +4,22 @@ import Cta from "../cta/Cta.astro";
 ---
 
 <script>
-  let showCta = false;
-
+  /** Get all the required DOM elements. */
   const ctaButton: HTMLButtonElement | null =
     document.querySelector("#ctaButton");
+  const backdrop: HTMLDivElement | null = document.querySelector(".backdrop");
+  const modal: HTMLDivElement | null = document.querySelector(".cta-modal");
 
+  /** Toggle the hidden class when the button is clicked. */
   const toggleCtaModal = function () {
-    console.log("toggle cta modal");
-    showCta = !showCta;
+    backdrop && backdrop.classList.toggle("hidden");
+    modal && modal.classList.toggle("hidden");
   };
 
+  /** Add click event listener to the cta button */
   ctaButton?.addEventListener("click", toggleCtaModal);
 
+  /** Remove the click event listener before the window unloads */
   window.addEventListener("beforeunload", () => {
     ctaButton?.removeEventListener("click", toggleCtaModal);
   });
