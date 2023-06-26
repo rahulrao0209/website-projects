@@ -5,22 +5,82 @@ const products: Product[] = JSON.parse(JSON.stringify(PRODUCTS));
 ---
 
 <script>
+  /** DOM Nodes */
   const closeBtn: HTMLButtonElement | null =
     document.querySelector(".close-btn");
   const backdrop: HTMLDivElement | null = document.querySelector(".backdrop");
   const modal: HTMLDivElement | null = document.querySelector(".cta-modal");
+  const radioButtons: NodeListOf<HTMLInputElement> = document.querySelectorAll(
+    ".card input#pledge-radio"
+  );
+  const noRewardRadioButton: HTMLInputElement | null = document.querySelector(
+    "#pledge-radio-no-reward"
+  );
 
+  const pledges: NodeListOf<HTMLDivElement> =
+    document.querySelectorAll(".pledge");
+
+  const separators: NodeListOf<HTMLHRElement> =
+    document.querySelectorAll(".separator");
+
+  /* --------------------------------------------------------------------------- */
+  /** Functions */
   const closeModal = function () {
     backdrop && backdrop.classList.add("hidden");
     modal && modal.classList.add("hidden");
   };
 
-  /** Add click event listener to the close button */
+  const hidePledges = function () {
+    pledges.forEach((pledge: HTMLDivElement) => pledge.classList.add("hidden"));
+    separators.forEach((separator: HTMLHRElement) =>
+      separator.classList.add("hidden")
+    );
+  };
+
+  const toggleSelectedPledge = function (event: any) {
+    const targetElement = event.target;
+    const dataId = targetElement!.dataset!.id;
+
+    /** Show pledge based on the dataId */
+    pledges.forEach((pledge: HTMLDivElement) => {
+      pledge.classList.add("hidden");
+
+      if (pledge.dataset.pledgeid === dataId) {
+        pledge.classList.remove("hidden");
+      }
+    });
+
+    /** Show the separator for the revealed pledge */
+    separators.forEach((separator: HTMLHRElement) => {
+      separator.classList.add("hidden");
+
+      if (separator.dataset.separatorid === dataId) {
+        separator.classList.remove("hidden");
+      }
+    });
+  };
+
+  /* --------------------------------------------------------------------------- */
+  /** Event Listeners */
+  /** Add click event listeners to the close button and the radio buttons */
   closeBtn?.addEventListener("click", closeModal);
 
-  /** Remove the click event listener before the window unloads */
+  radioButtons.forEach((button: HTMLInputElement) => {
+    button.addEventListener("click", toggleSelectedPledge);
+  });
+
+  noRewardRadioButton?.addEventListener("click", hidePledges);
+
+  /* --------------------------------------------------------------------------- */
+  /** Remove the click event listeners before the window unloads */
   window.addEventListener("beforeunload", () => {
     closeBtn?.removeEventListener("click", closeModal);
+
+    radioButtons.forEach((button: HTMLInputElement) => {
+      button.removeEventListener("click", toggleSelectedPledge);
+    });
+
+    noRewardRadioButton?.removeEventListener("click", hidePledges);
   });
 </script>
 
@@ -29,7 +89,7 @@ const products: Product[] = JSON.parse(JSON.stringify(PRODUCTS));
 >
 </div>
 <div
-  class="cta-modal | hidden absolute w-11/12 md:w-min -top-24 left-1/2 -translate-x-1/2 h-content bg-white rounded-2xl xl:w-max min-w-fit max-w-screen-lg px-16 py-20"
+  class="cta-modal | hidden absolute w-11/12 -top-24 left-1/2 -translate-x-1/2 h-content bg-white rounded-2xl xl:w-max min-w-fit max-w-screen-lg px-16 py-20"
 >
   <button
     class="close-btn | absolute top-24 right-14 hover:scale-125 active:scale-100 ease-linear duration-150"
@@ -54,7 +114,7 @@ const products: Product[] = JSON.parse(JSON.stringify(PRODUCTS));
       <div class="flex items-baseline gap-4">
         <input
           type="radio"
-          id="pledge-25"
+          id="pledge-radio-no-reward"
           class="accent-cyan-moderate w-6 h-6 hover:cursor-pointer"
           name="product"
         />
@@ -73,9 +133,11 @@ const products: Product[] = JSON.parse(JSON.stringify(PRODUCTS));
             <div class="flex items-center gap-4 col-start-1 col-end-3 xl:col-end-auto">
               <input
                 type="radio"
-                id="pledge-25"
+                id="pledge-radio"
                 class="accent-cyan-moderate w-6 h-6 hover:cursor-pointer"
                 name="product"
+                value="Hello"
+                data-id={product.id}
               />
               <h1 class="text-2xl font-bold">{product.title}</h1>
             </div>
@@ -90,8 +152,14 @@ const products: Product[] = JSON.parse(JSON.stringify(PRODUCTS));
           <p class="text-2xl my-6 text-darkGray mx-auto pl-10 leading-relaxed">
             {product.content}
           </p>
-          <hr class="text-gray-300 w-full" />
-          <div class="pledge | flex flex-col gap-y-8 sm:gap-y-0 sm:flex-row justify-between mt-12 text-2xl items-center justify-center">
+          <hr
+            class="separator | text-gray-300 w-full hidden"
+            data-separatorid={product.id}
+          />
+          <div
+            class="pledge | flex flex-col gap-y-8 sm:gap-y-0 sm:flex-row justify-between mt-12 text-2xl items-center justify-center hidden"
+            data-pledgeid={product.id}
+          >
             <div>
               <input
                 class="text-darkGray mb-8 sm:mb-0 focus:outline-none focus:placeholder:text-cyan-moderate"
